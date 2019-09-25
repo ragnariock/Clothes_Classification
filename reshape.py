@@ -15,13 +15,13 @@ for root, dirs, files in os.walk(".", topdown=False):
 		nameImage = os.path.join(root,name)
 		nameImage = str(nameImage)
 		name_root = str(root)
-		if re.search(r'data/train/military',name_root):
+		if re.search(r'data/val/suit',name_root):
 			if re.search(r'jpg',nameImage) or re.search(r'.jpeg',nameImage):
 				img = cv2.imread(nameImage)
 				resize_image = cv2.resize(img,dim)
 				#print(len(img.shape))
 				if len(img.shape) == 3 : 
-					cv2.imwrite('data/train/Military/'+str(num) + '.jpg', resize_image )
+					cv2.imwrite('data/val/Suit/'+str(num) + '.jpg', resize_image )
 					num +=1
 					print("DONE !")
 				else : 
